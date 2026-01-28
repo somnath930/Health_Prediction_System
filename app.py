@@ -107,4 +107,4 @@ if st.button("Predict Disease"):
             st.warning("⚠️ SEVERITY: MODERATE")
             st.write("Please consult a general physician for further advice.")
 
-        st.info("ℹ️ Disclaimer: This is an AI prototype[cite: 12]. Consult a doctor for medical advice.")
+        st.info("ℹ️ Disclaimer: This is an AI prototype. Consult a doctor for medical advice.")
