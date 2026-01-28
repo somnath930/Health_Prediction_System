@@ -31,17 +31,18 @@ clinic_cases = [
 ]
 
 # --- PART 3: THE WEBSITE LAYOUT ---
-st.set_page_config(page_title="Rural Health Triage", page_icon="🏥", layout="centered")
+# REVERTED NAME HERE: Matches your original file
+st.set_page_config(page_title="Health Predictor", page_icon="🏥", layout="centered")
 
-st.markdown("<h1 style='text-align: center; color: #2E86C1;'>🏥 Rural Smart Health System</h1>", unsafe_allow_html=True)
-st.markdown("### AI-Driven Triage: Determining Severity for Rural Patients")
+st.title("🏥 Health Prediction System (AIML)")
+st.markdown("Select your symptoms below to get a preliminary diagnosis.")
 st.write("---")
 
 # User Interface for Symptoms
 selected_symptoms = st.multiselect("Select Symptoms (Type to search):", all_symptoms)
 
 # --- PART 4: THE PREDICTION LOGIC ---
-if st.button("Analyze Condition"):
+if st.button("Predict Disease"):
     if len(selected_symptoms) == 0:
         st.warning("Please select at least one symptom.")
     else:
@@ -59,7 +60,7 @@ if st.button("Analyze Condition"):
         probability = model.predict_proba([input_data]).max() * 100
         
         st.write("---")
-        st.subheader("📊 Analysis Report")
+        st.subheader("📊 Prediction Report")
         
         # Display the Speedometer (Progress Bar)
         st.write(f"**AI Confidence Level:** {probability:.1f}%")
@@ -106,4 +107,4 @@ if st.button("Analyze Condition"):
             st.warning("⚠️ SEVERITY: MODERATE")
             st.write("Please consult a general physician for further advice.")
 
-        st.info("ℹ️ Note: This AI is for decision support only. Always follow medical advice.")
+        [cite_start]st.info("ℹ️ Disclaimer: This is an AI prototype[cite: 12]. Consult a doctor for medical advice.")
